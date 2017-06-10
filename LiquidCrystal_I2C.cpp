@@ -214,6 +214,27 @@ void LiquidCrystal_I2C::createChar(uint8_t location, uint8_t charmap[]) {
 	}
 }
 
+
+/**
+ * @brief multiline print function
+ * @param value String to print
+ * 
+ * This funciton is looking for a single newline character \n
+ * And go automatically into the next line.
+ */
+void LiquidCrystal_I2C::mprint(const String& value)
+{
+	// looking for newline character
+	uint8_t pos = value.indexOf('\n');
+
+	// print values
+	setCursor(0, 0);
+	print(value.substring(0, pos - 1));
+	setCursor(0, 1);
+	print(value.substring(pos + 1));
+}
+
+
 //createChar with PROGMEM input
 void LiquidCrystal_I2C::createChar(uint8_t location, const char *charmap) {
 	location &= 0x7; // we only have 8 locations 0-7

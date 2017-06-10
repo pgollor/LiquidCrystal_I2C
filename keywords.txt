@@ -34,6 +34,7 @@ noAutoscroll	KEYWORD2
 createChar	KEYWORD2
 setCursor	KEYWORD2
 print	KEYWORD2
+mprint	KEYWORD2
 blink_on	KEYWORD2
 blink_off	KEYWORD2
 cursor_on	KEYWORD2
